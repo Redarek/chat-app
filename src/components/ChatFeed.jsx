@@ -1,6 +1,7 @@
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
+import BChainButton from './BChainButton';
 
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
@@ -29,6 +30,7 @@ const ChatFeed = (props) => {
       return (
         <div key={`msg_${index}`} style={{ width: '100%' }}>
           <div className="message-block">
+            <BChainButton style={{ float: isMyMessage ? 'right' : 'left' }}/>
             {isMyMessage
               ? <MyMessage message={message} />
               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}
