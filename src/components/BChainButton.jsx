@@ -28,16 +28,17 @@ function initContracts() {
     contractController = new ethers.Contract(address, abi, signer);
 }
 
-function sendMessage(){
-    contractController.sendText("s")
+function sendMessage(text){
+    contractController.sendText(text)
 }
 
-const BChainButton = ({  }) => {
+const BChainButton = ({ text }) => {
+
     return (
         <div className="" style={{}}>
             <button
                 className="send-to-bchain"
-                onClick={sendMessage}
+                onClick={() => sendMessage(text.text)}
                 style={{ backgroundColor: '#1E90FF', width: '15px', height: '15px' }} />
         </div>
     );
