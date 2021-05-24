@@ -14,7 +14,7 @@ const ChatFeed = (props) => {
       className="read-receipt"
       style={{
         float: isMyMessage ? 'right' : 'left',
-        backgroundImage: person.person.avatar && `url(${person.person.avatar})`,
+        backgroundImage: person.person.avatar && `url(${person.person.avatar})`
       }}
     />
   ));
@@ -30,7 +30,7 @@ const ChatFeed = (props) => {
       return (
         <div key={`msg_${index}`} style={{ width: '100%' }}>
           <div className="message-block">
-            <BChainButton style={{ float: isMyMessage ? 'right' : 'left' }}/>
+            <div style={{ float: isMyMessage ? 'right' : 'left' }}> <BChainButton text={message} /> </div>
             {isMyMessage
               ? <MyMessage message={message} />
               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}
